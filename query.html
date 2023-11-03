@@ -23,7 +23,7 @@
         </nav>
     </header>
     <div class="back">
-          <form action="" style="color: rgb(218, 239, 240); font-weight: 700;">
+          <form id="form" action="" style="color: rgb(218, 239, 240); font-weight: 700;">
               <label for="Name">Name</label>
               <input type="text" id="Name" placeholder="Enter Your Name...">
               <label for="Email">Email</label>
@@ -48,6 +48,7 @@
        var contact=document.getElementById("Contact").value;
        var sub=document.getElementById("Subject").value;
        var mess=document.getElementById("Message").value;
+        var f=document.getElementById("form");
   var body="Name: "+name+"<br/> Email" +email+"<br/> Contact Number:"+contact+"<br/> Message:"+mess
         Email.send({
     Host : "smtp.elasticemail.com",
@@ -62,8 +63,10 @@
         {
             if(message=="ok"){
                 swal("Successfull!", "Your message recieved!", "success");
+                f.reset();
             }else{
                 swal("Successfull!", "Your message recieved!", "success");
+                f.reset();
             }
         }
      
